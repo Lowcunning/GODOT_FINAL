@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dusesybhck4nd"]
+
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_fsoq2"]
+[ext_resource type="Texture2D" uid="uid://dckfw24g4a10y" path="res://icon.svg" id="1_qdfbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwlh"]
+size = Vector2(240.938, 21.2086)
+
+[node name="Obstacle" type="Area2D" node_paths=PackedStringArray("collider")]
+position = Vector2(-0.999985, -16)
+scale = Vector2(0.902209, 1)
+script = ExtResource("1_fsoq2")
+collider = NodePath("CollisionShape2D")
+
+[node name="Icon9" type="Sprite2D" parent="."]
+scale = Vector2(1.88253, -0.226165)
+texture = ExtResource("1_qdfbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.554206, 0.387589)
+scale = Vector2(0.979866, 0.979562)
+shape = SubResource("RectangleShape2D_mpwlh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://1clhkby2vmup"]
+
+[ext_resource type="PackedScene" uid="uid://dhqk21ty3aehy" path="res://Scenes/player.tscn" id="1_dhslj"]
+[ext_resource type="PackedScene" uid="uid://dusesybhck4nd" path="res://Scenes/obstacle.tscn" id="2_ar3li"]
+
+[sub_resource type="TileSet" id="TileSet_gkk7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2rjk"]
+size = Vector2(39, 1989)
+
+[node name="Node" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_dhslj")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gkk7a")
+format = 2
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(526, -3)
+
+[node name="Collision" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_s2rjk")
+debug_color = Color(1, 0.0114164, 0.0219305, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(-526, -3)
+
+[node name="Collision" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("RectangleShape2D_s2rjk")
+debug_color = Color(1, 0.0114164, 0.0219305, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
+position = Vector2(89, -15)
+
+[node name="Obstacle" parent="." instance=ExtResource("2_ar3li")]
+position = Vector2(-3, -554)
+
+[node name="Obstacle2" parent="." instance=ExtResource("2_ar3li")]
+position = Vector2(233, -1073)
+
+[node name="Obstacle3" parent="." instance=ExtResource("2_ar3li")]
+position = Vector2(-332, -1512)
