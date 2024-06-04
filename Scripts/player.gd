@@ -10,7 +10,7 @@ extends CharacterBody2D
 
 var useVelMulti: float = 0
 
-func Movement():
+func Movement(_delta):
 	var directionX = Input.get_axis("left","right")
 	
 	if(Input.is_action_pressed("up")):
@@ -24,8 +24,8 @@ func Movement():
 	#print(velocity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	Movement()
+func _physics_process(_delta):
+	Movement(_delta)
 	move_and_slide()
 
 func TakeDamage(dmg):

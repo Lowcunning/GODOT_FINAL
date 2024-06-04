@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhqk21ty3aehy"]
+[gd_scene load_steps=5 format=3 uid="uid://dhqk21ty3aehy"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_5bg3o"]
-[ext_resource type="Texture2D" uid="uid://dckfw24g4a10y" path="res://icon.svg" id="1_lnpah"]
+[ext_resource type="Texture2D" uid="uid://xj1731r0jicw" path="res://Assets/Tanks.png" id="2_revi1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu8gf"]
+atlas = ExtResource("2_revi1")
+region = Rect2(32, 896, 384, 448)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbpi3"]
 size = Vector2(86, 110)
@@ -10,9 +14,8 @@ size = Vector2(86, 110)
 script = ExtResource("1_5bg3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lnpah")
+scale = Vector2(0.3, 0.269)
+texture = SubResource("AtlasTexture_iu8gf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nbpi3")
-
-[node name="Camera2D" type="Camera2D" parent="."]
