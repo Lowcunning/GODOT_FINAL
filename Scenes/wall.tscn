@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://caxx7x58ndva3" path="res://Assets/Level.png" id="1_fp5ke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2rjk"]
-size = Vector2(39, 1989)
+size = Vector2(38, 1235)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3o4p7"]
 atlas = ExtResource("1_fp5ke")
@@ -13,6 +13,7 @@ region = Rect2(96, 32, 32, 32)
 position = Vector2(526, -3)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_s2rjk")
 debug_color = Color(1, 0.0114164, 0.0219305, 0.42)
 

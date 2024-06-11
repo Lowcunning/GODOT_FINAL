@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var upVelMulti: float = 1
-@export var speed: float = 500
+@export var speed: float = 600
 @export var maxLife: float= 3
 @export var life: float= maxLife
 
@@ -36,3 +36,4 @@ func TakeDamage(dmg):
 
 func Die():
 	queue_free()
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
