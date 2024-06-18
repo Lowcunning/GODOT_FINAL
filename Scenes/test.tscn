@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1clhkby2vmup"]
+[gd_scene load_steps=7 format=3 uid="uid://1clhkby2vmup"]
 
 [ext_resource type="PackedScene" uid="uid://dhqk21ty3aehy" path="res://Scenes/player.tscn" id="1_dhslj"]
 [ext_resource type="TileSet" uid="uid://c7y3qkpdd2xa" path="res://Tilemaps/metal_level.tres" id="1_t0qps"]
 [ext_resource type="PackedScene" uid="uid://dusesybhck4nd" path="res://Scenes/obstacle.tscn" id="2_ar3li"]
 [ext_resource type="PackedScene" uid="uid://c5hhhva1lacp3" path="res://Scenes/player_cam.tscn" id="4_2agj3"]
 [ext_resource type="PackedScene" uid="uid://b5vsdxycjr6ig" path="res://Scenes/level_bounds.tscn" id="6_oaxxt"]
+[ext_resource type="Script" path="res://Scenes/Bullet.gd" id="6_xy651"]
 
 [node name="Node" type="Node"]
 
@@ -57,3 +58,8 @@ position = Vector2(-297, -2148)
 collider = NodePath("../Obstacle3/CollisionShape2D")
 
 [node name="Player" parent="." instance=ExtResource("1_dhslj")]
+speed = 450.0
+maxLife = 5.0
+
+[node name="Bullet" type="Node2D" parent="."]
+script = ExtResource("6_xy651")
